@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+    slashcommands:
+        image: discord-bot
+        container_name: slashcommands
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        tty: true
+        command: ['npm', 'run', 'start:slash']
+    webhook:
+        image: discord-bot
+        container_name: webhook
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        tty: true
+        command: ['npm', 'run', 'start:webhook']
